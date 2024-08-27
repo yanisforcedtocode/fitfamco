@@ -209,8 +209,15 @@
                   <div id="flatpickrContainer">
                     <form action="">
                       <input type="date" id="flatpickrWrapper" placeholder="input class date and time">
-                      <input type="number" min="100000" max="999999" id="productZipCodeParser">
+                      <input
+                        type="number"
+                        min="100000"
+                        max="999999"
+                        id="productZipCodeParser"
+                        placeholder="input postal code"
+                      >
                     </form>
+                    <p id="productParsedAddress"></p>
                   </div>
                 {%- endif -%}
               {%- when 'sku' -%}

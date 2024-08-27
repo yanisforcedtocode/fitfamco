@@ -2,10 +2,11 @@
     display: block;
 }
 
-#flatpickrWrapper{
+#flatpickrWrapper, #productZipCodeParser{
     width: 100%;
     text-align: center;
     padding: 1rem;
     border-radius: 0.5rem;
     border: 1px solid;
+    margin-bottom: 1rem;
 }

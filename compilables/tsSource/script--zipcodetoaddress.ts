@@ -14,11 +14,13 @@ type OneMapRes = {
 
 class ZipCodeParse {
     inputElm: HTMLInputElement | null
+    addressElm: HTMLElement | null
     public inputVal: number | undefined
     public isInputValid: boolean
     public address: OneMapRes | undefined
-    constructor(elmId: string,) {
+    constructor(elmId: string, addressId: string) {
         this.inputElm = document.querySelector(`input#${elmId}`)
+        this.addressElm = document.getElementById(addressId)
         this.isInputValid = false
         if (!this.inputElm) { console.log('zip code input element not found'); return }
         this.init(this.inputElm, this.inputHandler)
@@ -34,7 +36,6 @@ class ZipCodeParse {
         const sixDigitNumberPattern = /^\d{6}$/;
         return sixDigitNumberPattern.test(value);
     }
-
     inputHandler = async (input: string) => {
         const isValid = this.isSixDigitNumber(input)
         if (!isValid) {
@@ -49,12 +50,22 @@ class ZipCodeParse {
             // evoke changes
         }
     }
+    printAddress = (oneMapRes: OneMapRes)=>{
+        console.log(this.addressElm && oneMapRes?.results[0]?.ADDRESS)
+        if(this.addressElm && oneMapRes?.results[0]?.ADDRESS){
+            this.addressElm.innerText = oneMapRes?.results[0].ADDRESS
+        }
+        if(this.addressElm && !oneMapRes?.results[0]?.ADDRESS){
+            this.addressElm.innerText = "Address not found, please enter a valid postal code."
+        }
+    }
 
     evokeChanges = async (isValid: boolean, input: number | undefined) => {
         if (isValid && input) {
             const result = await this.getAddress(input)
             if (result) {
                 const resObj = JSON.parse(result)
+                this.printAddress(resObj)
                 console.log(resObj)
                 this.address = resObj
             }
@@ -87,4 +98,4 @@ class ZipCodeParse {
     }
 }
 
-const productZipCodeParser = new ZipCodeParse("productZipCodeParser")
+const productZipCodeParser = new ZipCodeParse("productZipCodeParser", "productParsedAddress")
