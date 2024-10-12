@@ -45,6 +45,7 @@
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'script--flatpickr.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'script--flatPickrInstance.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'script--propertySetter.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'script--zipcodetoaddress.js' | asset_url }}" defer="defer"></script>
 
   {%- if product.quantity_price_breaks_configured? -%}
@@ -208,13 +209,13 @@
                   </div>
                   <div id="flatpickrContainer">
                     <form action="">
-                      <input type="date" id="flatpickrWrapper" placeholder="input class date and time">
+                      <input type="date" id="flatpickrWrapper" placeholder="Select class date and time...">
                       <input
                         type="number"
                         min="100000"
                         max="999999"
                         id="productZipCodeParser"
-                        placeholder="input postal code"
+                        placeholder="Input postal code..."
                       >
                     </form>
                     <p id="productParsedAddress"></p>

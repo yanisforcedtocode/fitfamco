@@ -16,12 +16,8 @@ class ZipCodeParse {
                 handler(inputVal);
             });
         };
-        this.isSixDigitNumber = (value) => {
-            const sixDigitNumberPattern = /^\d{6}$/;
-            return sixDigitNumberPattern.test(value);
-        };
         this.inputHandler = (input) => __awaiter(this, void 0, void 0, function* () {
-            const isValid = this.isSixDigitNumber(input);
+            const isValid = ZipCodeParse.isSixDigitNumber(input);
             if (!isValid) {
                 this.isInputValid = false;
                 this.evokeChanges(this.isInputValid, this.inputVal);
@@ -35,13 +31,14 @@ class ZipCodeParse {
             }
         });
         this.printAddress = (oneMapRes) => {
-            var _a, _b, _c;
-            console.log(this.addressElm && ((_a = oneMapRes === null || oneMapRes === void 0 ? void 0 : oneMapRes.results[0]) === null || _a === void 0 ? void 0 : _a.ADDRESS));
-            if (this.addressElm && ((_b = oneMapRes === null || oneMapRes === void 0 ? void 0 : oneMapRes.results[0]) === null || _b === void 0 ? void 0 : _b.ADDRESS)) {
+            var _a, _b;
+            if (this.addressElm && ((_a = oneMapRes === null || oneMapRes === void 0 ? void 0 : oneMapRes.results[0]) === null || _a === void 0 ? void 0 : _a.ADDRESS)) {
                 this.addressElm.innerText = oneMapRes === null || oneMapRes === void 0 ? void 0 : oneMapRes.results[0].ADDRESS;
+                new ProductPropertySetter([{ key: "address", value: `${this.addressElm.innerText}, ZIP CODE: ${this.inputVal}` }], '[data-type="add-to-cart-form"]');
             }
-            if (this.addressElm && !((_c = oneMapRes === null || oneMapRes === void 0 ? void 0 : oneMapRes.results[0]) === null || _c === void 0 ? void 0 : _c.ADDRESS)) {
+            if (this.addressElm && !((_b = oneMapRes === null || oneMapRes === void 0 ? void 0 : oneMapRes.results[0]) === null || _b === void 0 ? void 0 : _b.ADDRESS)) {
                 this.addressElm.innerText = "Address not found, please enter a valid postal code.";
+                new ProductPropertySetter([{ key: "address", value: `Undefined, please contact support to schedule.` }], '[data-type="add-to-cart-form"]');
             }
         };
         this.evokeChanges = (isValid, input) => __awaiter(this, void 0, void 0, function* () {
@@ -50,7 +47,6 @@ class ZipCodeParse {
                 if (result) {
                     const resObj = JSON.parse(result);
                     this.printAddress(resObj);
-                    console.log(resObj);
                     this.address = resObj;
                 }
             }
@@ -60,7 +56,6 @@ class ZipCodeParse {
                 }
                 if (this.inputVal && this.inputElm && (JSON.stringify(this.inputElm.value).length - 2) > 6) {
                 }
-                console.log('prompt reenter');
             }
         });
         this.getAddress = (input) => __awaiter(this, void 0, void 0, function* () {
@@ -90,4 +85,8 @@ class ZipCodeParse {
         this.init(this.inputElm, this.inputHandler);
     }
 }
+ZipCodeParse.isSixDigitNumber = (value) => {
+    const sixDigitNumberPattern = /^\d{6}$/;
+    return sixDigitNumberPattern.test(value);
+};
 const productZipCodeParser = new ZipCodeParse("productZipCodeParser", "productParsedAddress");

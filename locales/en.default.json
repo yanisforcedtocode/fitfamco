@@ -465,13 +465,15 @@
     },
     "orders": {
       "title": "Order history",
+      "scheduled": "Scheduled Classes",
       "order_number": "Order",
       "order_number_link": "Order number {{ number }}",
       "date": "Date",
       "payment_status": "Payment status",
       "fulfillment_status": "Fulfillment status",
       "total": "Total",
-      "none": "You haven't placed any orders yet."
+      "none": "You haven't placed any orders yet.",
+      "none_classes": "You haven't scheduled any classes yet."
     },
     "recover_password": {
       "title": "Reset your password",

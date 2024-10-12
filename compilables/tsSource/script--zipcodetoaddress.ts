@@ -32,12 +32,12 @@ class ZipCodeParse {
             handler(inputVal)
         })
     }
-    isSixDigitNumber = (value: string): boolean => {
+    static isSixDigitNumber = (value: string): boolean => {
         const sixDigitNumberPattern = /^\d{6}$/;
         return sixDigitNumberPattern.test(value);
     }
     inputHandler = async (input: string) => {
-        const isValid = this.isSixDigitNumber(input)
+        const isValid = ZipCodeParse.isSixDigitNumber(input)
         if (!isValid) {
             this.isInputValid = false
             this.evokeChanges(this.isInputValid, this.inputVal)
@@ -51,22 +51,21 @@ class ZipCodeParse {
         }
     }
     printAddress = (oneMapRes: OneMapRes)=>{
-        console.log(this.addressElm && oneMapRes?.results[0]?.ADDRESS)
         if(this.addressElm && oneMapRes?.results[0]?.ADDRESS){
             this.addressElm.innerText = oneMapRes?.results[0].ADDRESS
+            new ProductPropertySetter([{key: "address", value: `${this.addressElm.innerText}, ZIP CODE: ${this.inputVal}`}], '[data-type="add-to-cart-form"]')
         }
         if(this.addressElm && !oneMapRes?.results[0]?.ADDRESS){
             this.addressElm.innerText = "Address not found, please enter a valid postal code."
+            new ProductPropertySetter([{key: "address", value: `Undefined, please contact support to schedule.`}], '[data-type="add-to-cart-form"]')
         }
     }
-
     evokeChanges = async (isValid: boolean, input: number | undefined) => {
         if (isValid && input) {
             const result = await this.getAddress(input)
             if (result) {
                 const resObj = JSON.parse(result)
                 this.printAddress(resObj)
-                console.log(resObj)
                 this.address = resObj
             }
         }
@@ -76,10 +75,8 @@ class ZipCodeParse {
             }
             if (this.inputVal && this.inputElm && (JSON.stringify(this.inputElm.value).length - 2) > 6) {
             }
-            console.log('prompt reenter')
         }
     }
-
     getAddress = async (input: number) => {
         try {
             const myHeaders = new Headers();

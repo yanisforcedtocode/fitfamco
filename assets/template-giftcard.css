@@ -35,7 +35,7 @@ body {
   max-width: var(--page-width);
   margin: 0 auto;
   flex: 1 0 auto;
-  font-family: var(--font-body-family);
+  font-family: Barlow;
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
 }
