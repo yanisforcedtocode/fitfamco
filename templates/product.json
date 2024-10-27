@@ -1,13 +1,13 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
-{
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
   "sections": {
     "main": {
       "type": "main-product",
@@ -51,7 +51,7 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
           }
         },
@@ -63,9 +63,9 @@
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Instructors",
-            "icon": "eye",
-            "content": "",
+            "heading": "Intensity",
+            "icon": "heart",
+            "content": "<p>This activity has a physical intensity of:   {{ product.metafields.classmeta.intensity.value }}</p><p> </p>",
             "page": ""
           }
         },
@@ -74,25 +74,16 @@
           "settings": {
             "heading": "Logistics and materials",
             "icon": "truck",
-            "content": "",
+            "content": "<p>{{ product.metafields.custom.equipment_required.value }}</p>",
             "page": ""
           }
         },
         "collapsible-row-2": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Features",
-            "icon": "star",
-            "content": "",
-            "page": ""
-          }
-        },
-        "collapsible-row-3": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "T&C",
-            "icon": "heart",
-            "content": "",
+            "heading": "Type",
+            "icon": "box",
+            "content": "<p>{{ product.metafields.custom.activity_type.value }}</p>",
             "page": ""
           }
         },
@@ -100,6 +91,19 @@
           "type": "share",
           "settings": {
             "share_label": "Share"
+          }
+        },
+        "complementary_byYXj6": {
+          "type": "complementary",
+          "settings": {
+            "block_heading": "Pairs well with",
+            "make_collapsible_row": false,
+            "icon": "price_tag",
+            "product_list_limit": 10,
+            "products_per_page": 3,
+            "pagination_style": "counter",
+            "image_ratio": "square",
+            "enable_quick_add": false
           }
         }
       },
@@ -115,8 +119,8 @@
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
-        "collapsible-row-3",
-        "share"
+        "share",
+        "complementary_byYXj6"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -147,7 +151,7 @@
         "image-with-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>FITFAMCO was established in 2016 as SgFitFam to address the need for a sustainable approach to personal and corporate wellness programs in Singapore. <\/p><p>Holistic training is a big part of sustainable fitness. We specialise in tailor-made programs to help our clients achieve sustainable results. We believe in building good habits and making gradual changes so our bodies can adapt to our ongoing lifestyle.<\/p>",
+            "text": "<p>FITFAMCO was established in 2016 as SgFitFam to address the need for a sustainable approach to personal and corporate wellness programs in Singapore. </p><p>Holistic training is a big part of sustainable fitness. We specialise in tailor-made programs to help our clients achieve sustainable results. We believe in building good habits and making gradual changes so our bodies can adapt to our ongoing lifestyle.</p>",
             "text_style": "body"
           }
         }
@@ -157,7 +161,7 @@
         "image-with-text-1"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/DSC_1474.jpg",
+        "image": "shopify://shop_images/DSC_1474.jpg",
         "height": "small",
         "desktop_image_width": "medium",
         "layout": "text_first",
@@ -178,8 +182,8 @@
         "column-0": {
           "type": "column",
           "settings": {
-            "title": "Free Shipping",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "title": "On site classes",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
             "link": ""
           }
@@ -187,8 +191,17 @@
         "column-1": {
           "type": "column",
           "settings": {
-            "title": "Hassle-Free Exchanges",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "title": "Free setup and arrangements",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_JtHfpK": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
             "link": ""
           }
@@ -196,7 +209,8 @@
       },
       "block_order": [
         "column-0",
-        "column-1"
+        "column-1",
+        "column_JtHfpK"
       ],
       "settings": {
         "title": "",

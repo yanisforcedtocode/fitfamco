@@ -17,6 +17,16 @@ class FitfamCoUtilities {
         const day = tomorrow.getDate().toString().padStart(2, '0');
         return `${year}-${month}-${day}`;
     }
+    static enableDefaultAdd2Cart = ()=>{
+        const button = document.querySelector('.product-form__buttons .product-form__submit') as HTMLButtonElement
+        if(!button)return
+        button.disabled = false
+    }
+    static disableDefaultAdd2Cart = ()=>{
+        const button = document.querySelector('.product-form__buttons .product-form__submit') as HTMLButtonElement
+        if(!button)return
+        button.disabled = true
+    }
 }
 
 class VariantCalendarControl {
@@ -96,5 +106,5 @@ class VariantCalendarControl {
     }
 }
 
-new VariantCalendarControl("super")
+new VariantCalendarControl("Express")
 

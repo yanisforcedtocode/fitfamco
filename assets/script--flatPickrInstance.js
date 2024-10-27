@@ -18,6 +18,18 @@ FitfamCoUtilities.getFutureDateString = (days) => {
     const day = tomorrow.getDate().toString().padStart(2, '0');
     return `${year}-${month}-${day}`;
 };
+FitfamCoUtilities.enableDefaultAdd2Cart = () => {
+    const button = document.querySelector('.product-form__buttons .product-form__submit');
+    if (!button)
+        return;
+    button.disabled = false;
+};
+FitfamCoUtilities.disableDefaultAdd2Cart = () => {
+    const button = document.querySelector('.product-form__buttons .product-form__submit');
+    if (!button)
+        return;
+    button.disabled = true;
+};
 class VariantCalendarControl {
     constructor(superKey) {
         this.initiateFlatPicker = (maxDate) => {
@@ -95,4 +107,4 @@ class VariantCalendarControl {
         this.listenToInfo(info);
     }
 }
-new VariantCalendarControl("super");
+new VariantCalendarControl("Express");

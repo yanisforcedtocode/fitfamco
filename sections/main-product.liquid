@@ -203,10 +203,10 @@
                   {%- endif -%}
                 </p>
               {%- when 'description' -%}
-                {%- if product.description != blank -%}
-                  <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-                    {{ product.description }}
-                  </div>
+                {% if product.type == 'onsiteclasses' %}
+                  <p class="product__text inline-richtext caption-with-letter-spacing">
+                    *enter time and address to enable add to cart.
+                  </p>
                   <div id="flatpickrContainer">
                     <form action="">
                       <input type="date" id="flatpickrWrapper" placeholder="Select class date and time...">
@@ -219,6 +219,13 @@
                       >
                     </form>
                     <p id="productParsedAddress"></p>
+                  </div>
+                {% endif %}
+                {%- if product.description != blank -%}
+                  <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
+                    <p class="paragraph02">
+                      {{ product.description | strip_html }}
+                    </p>
                   </div>
                 {%- endif -%}
               {%- when 'sku' -%}

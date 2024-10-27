@@ -57,7 +57,7 @@ class ZipCodeParse {
         }
         if(this.addressElm && !oneMapRes?.results[0]?.ADDRESS){
             this.addressElm.innerText = "Address not found, please enter a valid postal code."
-            new ProductPropertySetter([{key: "address", value: `Undefined, please contact support to schedule.`}], '[data-type="add-to-cart-form"]')
+            new ProductPropertySetter([{key: "address", value: undefined}], '[data-type="add-to-cart-form"]')
         }
     }
     evokeChanges = async (isValid: boolean, input: number | undefined) => {

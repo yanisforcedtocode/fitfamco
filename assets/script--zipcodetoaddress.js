@@ -38,7 +38,7 @@ class ZipCodeParse {
             }
             if (this.addressElm && !((_b = oneMapRes === null || oneMapRes === void 0 ? void 0 : oneMapRes.results[0]) === null || _b === void 0 ? void 0 : _b.ADDRESS)) {
                 this.addressElm.innerText = "Address not found, please enter a valid postal code.";
-                new ProductPropertySetter([{ key: "address", value: `Undefined, please contact support to schedule.` }], '[data-type="add-to-cart-form"]');
+                new ProductPropertySetter([{ key: "address", value: undefined }], '[data-type="add-to-cart-form"]');
             }
         };
         this.evokeChanges = (isValid, input) => __awaiter(this, void 0, void 0, function* () {

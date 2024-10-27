@@ -162,52 +162,54 @@
             </caption>
             <thead role="rowgroup">
               <tr role="row">
-                <th id="ColumnOrder" scope="col" role="columnheader">{{ 'customer.orders.order_number' | t }}</th>
-                <th id="ColumnDate" scope="col" role="columnheader">{{ 'customer.orders.date' | t }}</th>
-                <th id="ColumnPayment" scope="col" role="columnheader">{{ 'customer.orders.payment_status' | t }}</th>
-                <th id="ColumnFulfillment" scope="col" role="columnheader">
-                  {{ 'customer.orders.fulfillment_status' | t }}
-                </th>
-                <th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}</th>
+                <th scope="col" role="columnheader">{{ 'customer.orders.order_number' | t }}</th>
+                <th scope="col" role="columnheader">time</th>
+                <th scope="col" role="columnheader">location</th>
+                <th scope="col" role="columnheader">Fulfilled sessions</th>
               </tr>
             </thead>
             <tbody role="rowgroup">
               {%- for order in customer.orders -%}
-                <tr role="row">
-                  <td
-                    id="RowOrder"
-                    role="cell"
-                    headers="ColumnOrder"
-                    data-label="{{ 'customer.orders.order_number' | t }}"
-                  >
-                    <a
-                      href="{{ order.customer_url }}"
-                      aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}"
-                    >
-                      {{ order.name }}
-                    </a>
-                  </td>
-                  <td headers="RowOrder ColumnDate" role="cell" data-label="{{ 'customer.orders.date' | t }}">
-                    {{ order.created_at | time_tag: format: 'date' }}
-                  </td>
-                  <td
-                    headers="RowOrder ColumnPayment"
-                    role="cell"
-                    data-label="{{ 'customer.orders.payment_status' | t }}"
-                  >
-                    {{ order.financial_status_label }}
-                  </td>
-                  <td
-                    headers="RowOrder ColumnFulfillment"
-                    role="cell"
-                    data-label="{{ 'customer.orders.fulfillment_status' | t }}"
-                  >
-                    {{ order.fulfillment_status_label }}
-                  </td>
-                  <td headers="RowOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">
-                    {{ order.total_net_amount | money_with_currency }}
-                  </td>
-                </tr>
+                {% for item in order.line_items %}
+                  {% if item.product.type == 'onsiteclasses' %}
+                    <tr role="row">
+                      <td
+                        id="RowOrder"
+                        role="cell"
+                        headers="ColumnOrder"
+                        data-label="{{ 'customer.orders.order_number' | t }}"
+                      >
+                        <a
+                          href="{{ order.customer_url }}"
+                          aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}"
+                        >
+                          {{ order.name }}
+                        </a>
+                      </td>
+                      <td headers="RowOrder ColumnDate" role="cell">
+                        {% assign classtime = 'Please schedule with our team.' %}
+                        {% for property in item.properties -%}
+                          {%- if property.first == 'time' %}
+                            {% assign classtime = property.last %}
+                          {% endif %}
+                        {% endfor %}
+                        {{ classtime }}
+                      </td>
+                      <td headers="RowOrder ColumnPayment" role="cell">
+                        {% assign classaddress = 'Please arrange a address with our team.' %}
+                        {% for property in item.properties %}
+                          {% if property.first == 'address' %}
+                            {% assign classaddress = property.last %}
+                          {% endif %}
+                        {% endfor %}
+                        {{ classaddress }}
+                      </td>
+                      <td headers="RowOrder ColumnFulfillment" role="cell">
+                        {{ item.successfully_fulfilled_quantity }}
+                      </td>
+                    </tr>
+                  {% endif %}
+                {% endfor %}
               {%- endfor -%}
             </tbody>
           </table>

@@ -1,0 +1,13 @@
+#whatsapp_button_wrapper{
+    position: fixed;
+    width: 5rem;
+    aspect-ratio: 1;
+    bottom: 2rem;
+    right: 2rem;
+    filter: drop-shadow(3px 3px 3px rgba(60, 60, 60, .2));
+    img{
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+}
