@@ -79,7 +79,6 @@
             endif
           -%}
           <button
-            disabled
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
@@ -87,6 +86,7 @@
             {% if product.selected_or_first_available_variant.available == false
               or quantity_rule_soldout
               or product.selected_or_first_available_variant == null
+              or product.type == 'onsiteclasses'
             %}
               disabled
             {% endif %}
@@ -95,7 +95,7 @@
               {%- if product.selected_or_first_available_variant == null -%}
                 {{ 'products.product.unavailable' | t }}
               {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
-                {{ 'products.product.sold_out' | t }}
+                {{ 'products.product.sold_out' | t }}aaaa
               {%- else -%}
                 {{ 'products.product.add_to_cart' | t }}
               {%- endif -%}
@@ -117,7 +117,7 @@
           class="product-form__submit button button--full-width button--primary"
           disabled
         >
-          {{ 'products.product.sold_out' | t }}
+          {{ 'products.product.sold_out' | t }}asdasd
         </button>
       </div>
     </div>

@@ -191,14 +191,17 @@ if (!customElements.get('product-info')) {
           updateSourceFromDestination('Inventory', ({ innerText }) => innerText === '');
           updateSourceFromDestination('Volume');
           updateSourceFromDestination('Price-Per-Item', ({ classList }) => classList.contains('hidden'));
+          // code injected by Yan for custom function Dec2024
+          new VirtualClassPicker('Delivery', 'Virtual');
 
           this.updateQuantityRules(this.sectionId, html);
           this.querySelector(`#Quantity-Rules-${this.dataset.section}`)?.classList.remove('hidden');
           this.querySelector(`#Volume-Note-${this.dataset.section}`)?.classList.remove('hidden');
 
           this.productForm?.toggleSubmitButton(
-            html.getElementById(`ProductSubmitButton-${this.sectionId}`)?.hasAttribute('disabled') ?? true,
-            window.variantStrings.soldOut
+            html.getElementById(`ProductSubmitButton-${this.sectionId}`)?.hasAttribute('disabled') ?? true
+            // This put sold out message on disabled cart buttons
+            // window.variantStrings.soldOut
           );
 
           publish(PUB_SUB_EVENTS.variantChange, {

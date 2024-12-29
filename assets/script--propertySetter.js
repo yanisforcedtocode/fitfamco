@@ -61,9 +61,11 @@ class ProductPropertySetter {
         this.insertInputs(inputs, formID);
         this.changeProductProperties(properties);
         if (defaultProductPropertiesStore.isAllValuesTruthy()) {
+            // console.log('all truthy')
             FitfamCoUtilities.enableDefaultAdd2Cart();
         }
         if (!defaultProductPropertiesStore.isAllValuesTruthy()) {
+            // console.log('not all truthy')
             FitfamCoUtilities.disableDefaultAdd2Cart();
         }
     }
