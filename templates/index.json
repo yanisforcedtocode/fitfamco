@@ -15,14 +15,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "FITFAM USER PLATFORM",
+            "heading": " Wellness Booking at Your Fingertips",
             "heading_size": "h0"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "Use the platform to schedule classes and manage credits",
+            "text": "Unlock access to expert-led fitness & wellness sessions using your prepaid credits.",
             "text_style": "body"
           }
         },
@@ -44,7 +44,7 @@
         "button"
       ],
       "settings": {
-        "image": "shopify://shop_images/DSC_1474.jpg",
+        "image": "shopify://shop_images/DSC_1864_1_190762df-a43c-4bba-aa12-04ab10e6c8fb.jpg",
         "image_overlay_opacity": 40,
         "image_height": "medium",
         "desktop_content_position": "middle-center",
@@ -57,97 +57,158 @@
         "show_text_below": false
       }
     },
-    "rich_text": {
-      "type": "rich-text",
+    "collection_list_yyMBJG": {
+      "type": "collection-list",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "featured_collection_HWXEYU": {
+          "type": "featured_collection",
           "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
+            "collection": "cardio-aerobics-martial-arts"
           }
         },
-        "text": {
-          "type": "text",
+        "featured_collection_pfzkyG": {
+          "type": "featured_collection",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "collection": "dance-rhythmic"
+          }
+        },
+        "featured_collection_FpPMgz": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "strength-conditioning-functional"
+          }
+        },
+        "featured_collection_WqQfzM": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "yoga-pilates-stretching"
+          }
+        },
+        "featured_collection_JKtbDX": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "unique-offerings"
+          }
+        },
+        "featured_collection_BxT67C": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "calm-focus-mindful"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text"
+        "featured_collection_HWXEYU",
+        "featured_collection_pfzkyG",
+        "featured_collection_FpPMgz",
+        "featured_collection_WqQfzM",
+        "featured_collection_JKtbDX",
+        "featured_collection_BxT67C"
       ],
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "title": "Fitness Classes",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column1": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/WhatsAppImage2020-12-26at10.41.36PM_4.png",
-            "title": "Discount A",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "BOOK NOW",
-            "link": ""
-          }
-        },
-        "column2": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/4891cceaf43e46545491beabe7ab302f.jpg",
-            "title": "Discount B",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "BOOK NOW",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column1",
-        "column2"
-      ],
+    "featured_collection_6DeEyt": {
+      "type": "featured-collection",
       "settings": {
-        "title": "Trending",
+        "title": "Meditation Classes",
         "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "meditation",
+        "products_to_show": 3,
         "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
     },
-    "featured_collection": {
+    "collection_list_FAzhRH": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_eqdp3R": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "fitness"
+          }
+        },
+        "featured_collection_gbftgg": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "nutrition"
+          }
+        },
+        "featured_collection_td3kVy": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "mental-wellbeing"
+          }
+        },
+        "featured_collection_DPtTTw": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "ergonomic"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_eqdp3R",
+        "featured_collection_gbftgg",
+        "featured_collection_td3kVy",
+        "featured_collection_DPtTTw"
+      ],
+      "settings": {
+        "title": "Wellness Talk",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_dLa8bi": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
+        "title": "Wellness Workshop",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
+        "collection": "workshop",
+        "products_to_show": 3,
+        "columns_desktop": 3,
         "full_width": false,
-        "show_view_all": false,
+        "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
@@ -155,46 +216,7 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 28,
-        "padding_bottom": 36
-      }
-    },
-    "collage": {
-      "type": "collage",
-      "blocks": {
-        "collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": "online-classes"
-          }
-        },
-        "product": {
-          "type": "product",
-          "settings": {
-            "product": "fitfatmco-credit",
-            "second_image": false
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": "on-site-classes"
-          }
-        }
-      },
-      "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
-      ],
-      "settings": {
-        "heading": "New Activities",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "card_styles": "product-card-wrapper",
-        "color_scheme": "scheme-1",
+        "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -202,9 +224,9 @@
   },
   "order": [
     "image_banner",
-    "rich_text",
-    "multicolumn",
-    "featured_collection",
-    "collage"
+    "collection_list_yyMBJG",
+    "featured_collection_6DeEyt",
+    "collection_list_FAzhRH",
+    "featured_collection_dLa8bi"
   ]
 }

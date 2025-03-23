@@ -4,10 +4,17 @@
   aspect-ratio: 1;
   bottom: 2rem;
   right: 2rem;
+  background-color: #fff;
+  border-radius: 5rem;
   -webkit-filter: drop-shadow(3px 3px 3px rgba(60, 60, 60, 0.2));
           filter: drop-shadow(3px 3px 3px rgba(60, 60, 60, 0.2));
 }
-#whatsapp_button_wrapper img {
+#whatsapp_button_wrapper a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#whatsapp_button_wrapper a img {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;

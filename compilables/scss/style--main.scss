@@ -17,3 +17,8 @@
     font-size: 1.4rem;
 }
 
+.product__description, .accordion__content  {
+    p{
+        @extend .paragraph02
+    }
+}

@@ -12,6 +12,6 @@
   font-family: "Barlow";
 }
 
-.paragraph02 {
+.paragraph02, .product__description p, .accordion__content p {
   font-size: 1.4rem;
 }

@@ -192,7 +192,9 @@ if (!customElements.get('product-info')) {
           updateSourceFromDestination('Volume');
           updateSourceFromDestination('Price-Per-Item', ({ classList }) => classList.contains('hidden'));
           // code injected by Yan for custom function Dec2024
-          new VirtualClassPicker('Delivery', 'Virtual');
+          if (typeof VirtualClassPicker !== 'undefined') {
+            new VirtualClassPicker('Delivery', 'Virtual');
+          }
 
           this.updateQuantityRules(this.sectionId, html);
           this.querySelector(`#Quantity-Rules-${this.dataset.section}`)?.classList.remove('hidden');

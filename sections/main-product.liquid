@@ -40,12 +40,13 @@
       }
     }
   {%- endstyle -%}
-
-  <script src="{{ 'script--propertySetter.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'script--flatpickr.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'script--flatPickrInstance.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'script--zipcodetoaddress.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'script--virtualClassPicker.js' | asset_url }}" defer="defer"></script>
+  {% if product.type == 'wellnessactivities' %}
+    <script src="{{ 'script--propertySetter.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'script--flatpickr.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'script--flatPickrInstance.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'script--zipcodetoaddress.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'script--virtualClassPicker.js' | asset_url }}" defer="defer"></script>
+  {% endif %}
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
@@ -204,7 +205,7 @@
                   {%- endif -%}
                 </p>
               {%- when 'description' -%}
-                {% if product.type == 'onsiteclasses' %}
+                {% if product.type == 'wellnessactivities' %}
                   <p class="product__text inline-richtext caption-with-letter-spacing">
                     *enter time and address to enable add to cart.
                   </p>
@@ -225,7 +226,7 @@
                 {%- if product.description != blank -%}
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
                     <p class="paragraph02">
-                      {{ product.description | strip_html }}
+                      {{ product.description }}
                     </p>
                   </div>
                 {%- endif -%}

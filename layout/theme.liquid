@@ -376,6 +376,15 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-    {% render 'snippet--whatsApp-button', number: '6580227927' %}
+    {% assign consultantcontact = 6580227927 %}
+    {% assign consultantimage = 'https://cdn.shopify.com/s/files/1/0891/0340/1270/files/whatsapp--icon.png?v=1728812122' %}
+    {% if customer.id != blank %}
+      {% assign consultantcontact = customer.metafields.admin.consultant.value.contact_number %}
+      {% assign consultantimage = customer.metafields.admin.consultant.value.consultant_image %}
+      {% assign consultantimage = consultantimage | image_url: width: 400 %}
+      {{ customer.id | prepend: 'userid: ' }}
+      {{ consultantimage }}
+    {% endif %}
+    {% render 'snippet--whatsApp-button', number: consultantcontact, customimage_url: consultantimage %}
   </body>
 </html>
