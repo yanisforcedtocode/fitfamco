@@ -22,3 +22,13 @@
         @extend .paragraph02
     }
 }
+.remarkTextArea{
+    margin: 0px 0px 1rem;
+    width: 330px;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid;
+    font-family: Barlow;
+    height: 10rem;
+    resize: none;
+}

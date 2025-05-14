@@ -382,8 +382,6 @@
       {% assign consultantcontact = customer.metafields.admin.consultant.value.contact_number %}
       {% assign consultantimage = customer.metafields.admin.consultant.value.consultant_image %}
       {% assign consultantimage = consultantimage | image_url: width: 400 %}
-      {{ customer.id | prepend: 'userid: ' }}
-      {{ consultantimage }}
     {% endif %}
     {% render 'snippet--whatsApp-button', number: consultantcontact, customimage_url: consultantimage %}
   </body>

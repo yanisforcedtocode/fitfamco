@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "image_banner": {
       "type": "image-banner",
@@ -44,7 +44,7 @@
         "button"
       ],
       "settings": {
-        "image": "shopify://shop_images/DSC_1864_1_190762df-a43c-4bba-aa12-04ab10e6c8fb.jpg",
+        "image": "shopify://shop_images/DSC_1864_1_c085e2ea-a9bd-40e3-ac22-52d7e289d204.jpg",
         "image_overlay_opacity": 40,
         "image_height": "medium",
         "desktop_content_position": "middle-center",
@@ -55,6 +55,168 @@
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
+      }
+    },
+    "multicolumn_EHwi4K": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_BCLw8r": {
+          "type": "column",
+          "settings": {
+            "title": "Step 1: Purchase Credits Package",
+            "text": "<p>Start by buying a <strong>credit package</strong> that fits your needs. These credits can be used to book any of our wellness classes. If you already have credits, you can skip this step.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_qACnfR": {
+          "type": "column",
+          "settings": {
+            "title": "Step 2: Credits Are Instantly Added",
+            "text": "<p>After your purchase, your store credits will be available in a few minutes. </p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_hx6WVy": {
+          "type": "column",
+          "settings": {
+            "title": "Step 3: Browse & Select Your Programs",
+            "text": "<p>Explore our range of programs and choose your preferred <strong>onsite, hybrid, or virtual</strong> session.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_RQFcwh": {
+          "type": "column",
+          "settings": {
+            "title": "Step 4: Choose Booking Type – Standard or Express",
+            "text": "<p>For urgent bookings within <strong>7 days</strong> higher pricing will applies.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_pdMqb7": {
+          "type": "column",
+          "settings": {
+            "title": "Step 5: Enter Your Postal Code",
+            "text": "<p>For onsite sessions, please enter your postal code when booking as some areas may incur an additional transport charge.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_F4GKzm": {
+          "type": "column",
+          "settings": {
+            "title": "Step 6: Use Store Credit at Checkout",
+            "text": "<p>At checkout, please ensure you check the box to apply your available store credits. If this option is not selected, payment will be processed using your credit card or chosen payment method.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_rEMD73": {
+          "type": "column",
+          "settings": {
+            "title": "Step 7: Get Confirmation",
+            "text": "<p>Once payment is completed, you’ll receive a confirmation email with your booking details. Please note that all bookings are <strong>tentative </strong>until we confirm trainer availability — we’ll follow up within 2–3 working days.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_BCLw8r",
+        "column_qACnfR",
+        "column_hx6WVy",
+        "column_RQFcwh",
+        "column_pdMqb7",
+        "column_F4GKzm",
+        "column_rEMD73"
+      ],
+      "settings": {
+        "title": "How It Works",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_product_6GyU7b": {
+      "type": "featured-product",
+      "blocks": {
+        "text_zjRGCX": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_P8cUn7": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_tjc8P9": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_yrqhRf": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_9J4zzH": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_R3kXCM": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_Ct3pwh": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_zjRGCX",
+        "title_P8cUn7",
+        "price_tjc8P9",
+        "variant_picker_yrqhRf",
+        "quantity_selector_9J4zzH",
+        "buy_buttons_R3kXCM",
+        "share_Ct3pwh"
+      ],
+      "settings": {
+        "product": "credits-package",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "collection_list_yyMBJG": {
@@ -224,6 +386,8 @@
   },
   "order": [
     "image_banner",
+    "multicolumn_EHwi4K",
+    "featured_product_6GyU7b",
     "collection_list_yyMBJG",
     "featured_collection_6DeEyt",
     "collection_list_FAzhRH",

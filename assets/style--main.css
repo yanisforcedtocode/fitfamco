@@ -15,3 +15,14 @@
 .paragraph02, .product__description p, .accordion__content p {
   font-size: 1.4rem;
 }
+
+.remarkTextArea {
+  margin: 0px 0px 1rem;
+  width: 330px;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid;
+  font-family: Barlow;
+  height: 10rem;
+  resize: none;
+}

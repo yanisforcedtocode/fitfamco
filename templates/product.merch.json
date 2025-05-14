@@ -56,33 +56,6 @@
           "type": "description",
           "settings": {}
         },
-        "collapsible-row-0": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Intensity",
-            "icon": "heart",
-            "content": "<p>This activity has a physical intensity of:   {{ product.metafields.classmeta.intensity.value }}</p><p> </p>",
-            "page": ""
-          }
-        },
-        "collapsible-row-1": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Logistics and materials",
-            "icon": "truck",
-            "content": "<p>{{ product.metafields.custom.equipment_required.value }}</p>",
-            "page": ""
-          }
-        },
-        "collapsible-row-2": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Type",
-            "icon": "box",
-            "content": "<p>{{ product.metafields.custom.activity_type.value }}</p>",
-            "page": ""
-          }
-        },
         "share": {
           "type": "share",
           "settings": {
@@ -112,9 +85,6 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "collapsible-row-0",
-        "collapsible-row-1",
-        "collapsible-row-2",
         "share",
         "complementary_byYXj6"
       ],

@@ -46,6 +46,7 @@
     <script src="{{ 'script--flatPickrInstance.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'script--zipcodetoaddress.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'script--virtualClassPicker.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'script--productRemark.js' | asset_url }}" defer="defer"></script>
   {% endif %}
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
@@ -224,6 +225,8 @@
                   </div>
                 {% endif %}
                 {%- if product.description != blank -%}
+                  <legend class="form__label">Remarks</legend>
+                  <textarea id="lineItemRemark" class="remarkTextArea" placeholder="Please enter remarks here (optional)"></textarea>
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
                     <p class="paragraph02">
                       {{ product.description }}

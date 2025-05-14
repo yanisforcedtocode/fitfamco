@@ -32,19 +32,20 @@ FitfamCoUtilities.disableDefaultAdd2Cart = () => {
 };
 class VariantCalendarControl {
     constructor(superKey) {
-        this.initiateFlatPicker = (maxDate) => {
+        this.initiateFlatPicker = (minDate) => {
+            // express 7 days
+            // standard 8 working days
             const inputOption = {
                 enableTime: true,
-                minDate: FitfamCoUtilities.getFutureDateString(4),
+                minDate: FitfamCoUtilities.getFutureDateString(8 + 2),
                 maxDate: undefined,
                 dateFormat: "Y-m-d",
                 minTime: "07:00",
                 maxTime: "18:30",
-                defaultHour: 8
+                defaultHour: 8,
             };
-            if (maxDate) {
-                inputOption.minDate = FitfamCoUtilities.getFutureDateString(1);
-                inputOption.maxDate = FitfamCoUtilities.getFutureDateString(maxDate);
+            if (minDate) {
+                inputOption.minDate = FitfamCoUtilities.getFutureDateString(minDate >= 7 ? minDate + 2 : minDate);
             }
             this.picker = flatpickr(this.myInput, inputOption);
             const pickerHandler = () => {
@@ -70,40 +71,58 @@ class VariantCalendarControl {
         };
         this.checkCheckedValue = (inputs) => {
             let checkedValue = undefined;
+            const checkedValues = [];
             inputs.forEach((el) => {
                 if (el.checked) {
                     checkedValue = el.value;
+                    checkedValues.push(el.value);
                 }
             });
-            return checkedValue;
+            return checkedValues;
+        };
+        this.getCheckedValues = (info) => {
+            const selects = this.getVariantSelects(info);
+            if (!selects)
+                return;
+            const inputs = this.getVariantInputs(selects);
+            if (!inputs)
+                return;
+            const checkedValues = this.checkCheckedValue(inputs);
+            return checkedValues;
         };
         this.listenToInfo = (info) => {
-            info.addEventListener("click", () => {
-                const selects = this.getVariantSelects(info);
-                if (!selects)
+            info.addEventListener("input", () => {
+                const checkedValues = this.getCheckedValues(info);
+                if (!checkedValues)
                     return;
-                const inputs = this.getVariantInputs(selects);
-                if (!inputs)
-                    return;
-                const checkedValue = this.checkCheckedValue(inputs);
-                if (this.currentKey === checkedValue) {
+                if (checkedValues && this.currentKey === checkedValues) {
                     return;
                 }
-                this.currentKey = checkedValue;
-                if (checkedValue === this.superKey) {
-                    this.initiateFlatPicker(3);
+                this.currentKey = checkedValues;
+                if (checkedValues.includes(this.superKey)) {
+                    this.initiateFlatPicker(7);
                 }
                 else {
                     this.initiateFlatPicker(false);
                 }
             });
         };
+        this.currentKey = [];
         this.superKey = superKey;
         this.myInput = document.querySelector("#flatpickrWrapper");
-        this.initiateFlatPicker(false);
         const info = this.getProductInfo();
+        this.initiateFlatPicker(7);
         if (!info)
             return;
+        const checkedValues = this.getCheckedValues(info);
+        if (checkedValues)
+            this.currentKey = checkedValues;
+        if (checkedValues && checkedValues.includes(this.superKey)) {
+            this.initiateFlatPicker(7);
+        }
+        else {
+            this.initiateFlatPicker(8);
+        }
         this.listenToInfo(info);
     }
 }
